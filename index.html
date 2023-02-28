@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- start of form -->
+      <div class="form-popup">
+        <form class="form-container">
+          <div class="form-header">
+            <h1>Add a book</h1>
+            <button class="close-button">&times;</button>
+          </div>
+          <div class="form-group">
+            <label for="book_name">Book Name:</label>
+            <input
+              type="text"
+              placeholder="Enter book name..."
+              name="book_name"
+              id="book_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="author_name">Author:</label>
+            <input
+              type="text"
+              placeholder="Enter author name..."
+              name="author_name"
+              id="author_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="number_pages">Pages:</label>
+            <input
+              type="number"
+              placeholder="Enter number of pages..."
+              name="number_pages"
+              id="number_pages"
+            />
+          </div>
+          <div class="form-check">
+            <input type="checkbox" name="read" id="read" />
+            <label for="read"> Finished reading?</label>
+          </div>
+          <div class="submit-div">
+            <button class="submit-button">Add</button>
+          </div>
+        </form>
+      </div>
+      <!-- end of form  -->
+
+      <!-- start of header -->
+      <div class="header">
+        <div class="logo">
+          <img src="/assets/images/logo.png" alt="logo" />
+          <span>My Box</span>
+        </div>
+        <button class="show-button">
+          <img src="assets/icons/archive-plus.svg" alt="add-button" />
+        </button>
+      </div>
+      <!-- end of header -->
+
+      <!-- start of content -->
+      <div class="content"></div>
+      <!-- end of content -->
+
+      <div class="overlay"></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
