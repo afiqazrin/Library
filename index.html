@@ -12,7 +12,7 @@
     <div class="container">
       <!-- start of form -->
       <div class="form-popup">
-        <form class="form-container">
+        <form class="form-container" id="form">
           <div class="form-header">
             <h1>Add a book</h1>
             <button class="close-button">&times;</button>
@@ -24,6 +24,7 @@
               placeholder="Enter book name..."
               name="book_name"
               id="book_name"
+              required
             />
           </div>
           <div class="form-group">
@@ -33,6 +34,7 @@
               placeholder="Enter author name..."
               name="author_name"
               id="author_name"
+              required
             />
           </div>
           <div class="form-group">
@@ -42,6 +44,7 @@
               placeholder="Enter number of pages..."
               name="number_pages"
               id="number_pages"
+              required
             />
           </div>
           <div class="form-check">
@@ -49,7 +52,7 @@
             <label for="read"> Finished reading?</label>
           </div>
           <div class="submit-div">
-            <button class="submit-button">Add</button>
+            <input type="submit" value="Add" class="submit-button" />
           </div>
         </form>
       </div>
@@ -68,7 +71,9 @@
       <!-- end of header -->
 
       <!-- start of content -->
-      <div class="content"></div>
+      <div class="content">
+        <div class="card-container"></div>
+      </div>
       <!-- end of content -->
 
       <div class="overlay"></div>
