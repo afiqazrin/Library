@@ -37,11 +37,11 @@ function isChecked() {
   }
 }
 
-function Book(title, author, pages, isRead) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = isRead;
+  this.read = read;
 }
 
 function addBookToLibrary(bname, aname, npages, readornot) {
@@ -78,6 +78,7 @@ function addCard() {
     authorNameDiv.textContent = book.author;
     numberOfPagesDiv.textContent = book.pages;
     readOrNotButton.textContent = book.read;
+    readOrNotButton.dataset.updateReadStatus = index;
     if (readOrNotButton.textContent == "Read") {
       readOrNotButton.className = "";
       readOrNotButton.classList.add("read");
@@ -92,6 +93,21 @@ function addCard() {
       myLibrary.splice(Number(removeButton.dataset.remove), 1);
       removeButton.parentElement.remove();
     });
+  });
+  readOrNotButton.addEventListener("click", (e) => {
+    if (e.target.textContent == "Read") {
+      e.target.className = "";
+      e.target.classList.add("not-read");
+      e.target.textContent = "Not Read";
+      myLibrary[Number(e.target.getAttribute("data-update-read-status"))].read =
+        "Not Read";
+    } else if (e.target.textContent == "Not Read") {
+      e.target.className = "";
+      e.target.classList.add("read");
+      e.target.textContent = "Read";
+      myLibrary[Number(e.target.getAttribute("data-update-read-status"))].read =
+        "Read";
+    }
   });
   formDiv.classList.remove("active");
   overlayDiv.classList.remove("active");
